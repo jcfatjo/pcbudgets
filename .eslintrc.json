@@ -11,6 +11,7 @@
     "plugins": ["react", "prettier", "unused-imports", "simple-import-sort"],
     "rules": {
         "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/triple-slash-reference": "off",
         "simple-import-sort/imports": "error",
         "unused-imports/no-unused-imports": "error"
     }
