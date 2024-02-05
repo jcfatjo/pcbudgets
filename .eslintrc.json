@@ -9,5 +9,7 @@
         "sourceType": "module"
     },
     "plugins": ["react", "prettier"],
-    "rules": {}
+    "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+    }
 }
