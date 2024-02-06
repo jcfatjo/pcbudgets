@@ -3,7 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": ["standard-with-typescript", "plugin:react/recommended", "prettier"],
+    "extends": ["standard-with-typescript", "plugin:react/recommended", "prettier", "plugin:@next/next/recommended"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -14,5 +14,10 @@
         "@typescript-eslint/triple-slash-reference": "off",
         "simple-import-sort/imports": "error",
         "unused-imports/no-unused-imports": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }
