@@ -9,7 +9,7 @@ const Budgets: React.FC = () => {
 
     return (
         <List>
-            {budgets.map(({ id, name }) => (
+            {budgets?.map(({ id, name }) => (
                 <ListItem key={id}>
                     <Link as={NextLink} href={`/budgets/${encodeURIComponent(id)}`}>
                         {name}

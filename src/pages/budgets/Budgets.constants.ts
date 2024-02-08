@@ -1,6 +1,6 @@
-import type { Budget } from "@/models/budet.model";
+import type { BudgetModel } from "@/models/budet.model";
 
-export const MOCK_BUDGETS: Budget[] = [
+export const MOCK_BUDGETS: BudgetModel[] = [
     {
         id: 1,
         name: "PC de Grecia"

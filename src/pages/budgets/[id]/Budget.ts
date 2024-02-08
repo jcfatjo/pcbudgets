@@ -1,27 +1,23 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
-import { type Budget } from "@/models/budet.model";
-import { MOCK_BUDGETS } from "@/pages/budgets/Budgets.constants";
+import { useGetBudget } from "@/hooks/api/api.hook";
+import { type BudgetModel } from "@/models/budet.model";
 
 type UseBudget = {
-    budget: Budget | null;
+    budget?: BudgetModel;
+    isLoading: boolean;
+    isError: boolean;
 };
 
 export const useBudget = (): UseBudget => {
     const router = useRouter();
     const { id } = router.query;
 
-    const [budget, setBudget] = useState<Budget | null>(null);
-
-    useEffect(() => {
-        const mockBudget = MOCK_BUDGETS.find(budget => budget.id === Number(id));
-        if (mockBudget) {
-            setBudget(mockBudget);
-        }
-    }, [id]);
+    const { budget, isLoading, isError } = useGetBudget(Number(id));
 
     return {
-        budget
+        budget,
+        isLoading,
+        isError
     };
 };

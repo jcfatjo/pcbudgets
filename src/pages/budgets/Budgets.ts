@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-
-import { type Budget } from "@/models/budet.model";
-import { MOCK_BUDGETS } from "@/pages/budgets/Budgets.constants";
+import { useGetBudgets } from "@/hooks/api/api.hook";
+import { type BudgetModel } from "@/models/budet.model";
 
 type UseBudgets = {
-    budgets: Budget[];
+    budgets?: BudgetModel[];
+    isLoading: boolean;
+    isError: boolean;
 };
 
 export const useBudgets = (): UseBudgets => {
-    const [budgets, setBudgets] = useState(MOCK_BUDGETS);
-
-    useEffect(() => {
-        setBudgets(MOCK_BUDGETS);
-    }, []);
+    const { budgets, isLoading, isError } = useGetBudgets();
 
     return {
-        budgets
+        budgets,
+        isLoading,
+        isError
     };
 };
