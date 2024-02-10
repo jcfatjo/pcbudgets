@@ -1,18 +1,23 @@
-import { Divider, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
-import BudgetTable from "@/components/BudgetTable";
+import BudgetSections from "@/components/BudgetSections";
 import { useBudget } from "@/pages/budgets/[id]/Budget";
 
 const Budget: React.FC = () => {
     const { budget } = useBudget();
 
     return (
-        <Stack>
-            <Text>{budget?.name}</Text>
-            <Divider />
-            {budget && <BudgetTable budget={budget} />}
-        </Stack>
+        <>
+            {budget && (
+                <Stack>
+                    <Text fontSize="xl" textAlign="center" my={4}>
+                        {budget.name}
+                    </Text>
+                    <BudgetSections budgetId={budget.id} components={budget.componentRecord} />
+                </Stack>
+            )}
+        </>
     );
 };
 

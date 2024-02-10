@@ -1,17 +1,20 @@
 export enum ComponentType {
     CPU = "CPU",
-    MOTHERBOARD = "MOTHERBOARD"
-    /* RAM = "RAM"
-    STORAGE_M2 = "STORAGE_M2",
-    STORAGE_SATA = "STORAGE_SATA",
-    PSU = "PSU",
+    MOTHERBOARD = "MOTHERBOARD",
+    RAM = "RAM",
     CASE = "CASE",
-    AIR_COOLING = "AIR_COOLING",
+    PSU = "PSU",
+    STORAGE_SSD_M2 = "STORAGE_SSD_M2",
+    STORAGE_SSD_SATA = "STORAGE_SSD_SATA",
+    STORAGE_HDD_SATA = "STORAGE_HDD_SATA",
     WATER_COOLING = "WATER_COOLING",
-    GPU = "GPU" */
+    AIR_COOLING = "AIR_COOLING",
+    CASE_COOLING = "CASE_COOLING",
+    GPU = "GPU"
 }
 
 export type BudgetComponentModel = {
+    id: number;
     type: ComponentType;
     brand: string;
     model: string;
@@ -19,8 +22,11 @@ export type BudgetComponentModel = {
     quantity: number;
 };
 
+export type ComponentRecord = Record<ComponentType, BudgetComponentModel[] | null[]>;
+
 export type BudgetModel = {
     id: number;
     name: string;
-    components: Record<ComponentType, BudgetComponentModel[]>;
+    componentRecord: ComponentRecord;
+    total: number;
 };
