@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "composite": true,
+        "module": "nodenext",
+        "rootDir": "./src",
+        "moduleResolution": "nodenext",
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "removeComments": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist", "*.d.ts"]
+}

@@ -1,39 +1,58 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+## Common
 
 # IDE
 .idea
+
+# dependencies
+/node_modules
+/apps/*/node_modules
+/pnpm-lock.yaml
+
+# typescript
+/apps/*/*.tsbuildinfo
+
+# ------------------------------
+
+## Server
+
+# production
+/apps/server/dist
+
+# ------------------------------
+
+## Webapp
+
+# dependencies
+/apps/webapp/.pnp
+/apps/webapp/.pnp.js
+/apps/webapp/.yarn/install-state.gz
+
+# testing
+/apps/webapp/coverage
+
+# next.js
+/apps/webapp/.next/
+/apps/webapp/out/
+
+# production
+/apps/webapp/build
+
+# misc
+/apps/webapp/.DS_Store
+/apps/webapp/*.pem
+
+# debug
+/apps/webapp/npm-debug.log*
+/apps/webapp/yarn-debug.log*
+/apps/webapp/yarn-error.log*
+
+# local env files
+/apps/webapp/.env*.local
+
+# vercel
+/apps/webapp/.vercel
+
+# typescript
+/apps/webapp/next-env.d.ts

@@ -1,37 +1,23 @@
 {
     "compilerOptions": {
-        /* Projects */
         "incremental": true,
-
-        /* Language and Environment */
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "jsx": "preserve",
-
-        /* Modules */
-        "module": "esnext",
-        "moduleResolution": "bundler",
+        "target": "esnext",
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "@pcbudgets/*": ["apps/server/src/*", "apps/webapp/src/*"]
         },
-        "resolveJsonModule": true,
-
-        /* JavaScript Support */
-        "allowJs": true,
-
-        /* Emit */
-        "noEmit": true,
-
-        /* Interop Constraints */
-        "isolatedModules": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-
-        /* Type Checking */
         "strict": true,
-
-        /* Completeness */
         "skipLibCheck": true
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
+    "references": [
+        {
+            "path": "apps/webapp"
+        },
+        {
+            "path": "apps/server"
+        }
+    ],
+    "exclude": ["node_modules", "*.d.ts"]
 }

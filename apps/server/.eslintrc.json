@@ -1,0 +1,13 @@
+{
+    "env": {
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": { "arguments": false } }],
+        "@typescript-eslint/return-await": "off"
+    }
+}
