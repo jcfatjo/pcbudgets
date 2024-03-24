@@ -13,11 +13,11 @@
     },
     "references": [
         {
-            "path": "apps/webapp"
+            "path": "./apps/webapp"
         },
         {
-            "path": "apps/server"
+            "path": "./apps/server"
         }
     ],
-    "exclude": ["node_modules", "*.d.ts"]
+    "exclude": ["./node_modules", "*.d.ts"]
 }
