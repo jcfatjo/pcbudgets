@@ -10,14 +10,13 @@
         "webapp:dev": "pnpm apps:webapp dev",
         "apps:server": "pnpm --filter server",
         "apps:webapp": "pnpm --filter webapp",
-        "wait:server": "wait-on tcp:3100",
-        "commitlint": "commitlint --edit"
+        "wait:server": "wait-on tcp:3100"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "engines": {
-        "node": ">=21.5.0"
+        "node": ">=20"
     },
     "devDependencies": {
         "@commitlint/cli": "19.2.1",
@@ -38,6 +37,11 @@
         "prettier": "3.2.5",
         "typescript": "5.3.3",
         "wait-on": "7.2.0"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     },
     "lint-staged": {
         "**/*.{js,ts,tsx}": [
